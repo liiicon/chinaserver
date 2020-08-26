@@ -1,10 +1,9 @@
 
 var oracledb = require('oracledb');
-const express = require('express')
 
 
-var query = function (sql, callback) {
 
+var query = function async(sql, callback) {
     oracledb.getConnection(
         {
             user: 'c##scott120',
@@ -12,7 +11,7 @@ var query = function (sql, callback) {
             connectString: '120.79.238.205/orcl',
         },
 
-        function (err, connection) {
+        async function (err, connection) {
             if (err) {
                 console.error(err.message);
                 return;
@@ -20,7 +19,7 @@ var query = function (sql, callback) {
                 console.log("连接成功");
             }
 
-            connection.execute(sql, [], function (err, result) {
+           await connection.execute(sql, [], function (err, result) {
                 if (err) {
                     console.error(err.message);
                     doRelease(connection);

@@ -1,7 +1,7 @@
 
 const express = require('express');
 const router = express.Router();
-const usersql = require('./usersql')
+
 
 // router.get('/test', (req, res) => {
 
@@ -9,6 +9,8 @@ const usersql = require('./usersql')
 // })
 var db = require('./connect');
 router.get('/test', (req, res) => {
+    var fs=req.query
+    console.log(fs)
     let usergrade = {
         id: parseInt(req.query.id),
         XQ: req.query.XQ,
