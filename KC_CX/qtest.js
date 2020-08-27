@@ -31,7 +31,7 @@ router.get('/qtest', async (req, res) => {
     }
     //去除字符串末尾字符'and'
     sql = sql.substring(0, sql.length - 4);
-    sql= sql
+    
     console.log(sql)
     console.log(typeof sql)
     

@@ -1,7 +1,9 @@
 const express =require('express')
 const app =express()
-const query= require('./query')
-const qtest=require('./qtest')
+const courseGrade= require('./routers/courseGrade')
+const qtest=require('./routers/qtest')
+const scheQuery=require('./routers/scheQuery')
+
 var bodyParser = require('body-parser'); 
 //引用bodyParser 这个不要忘了写
 app.use(bodyParser.json()); // for parsing application/json
@@ -16,8 +18,10 @@ app.all('*', function(req, res, next) {
     next();
  });
 
-app.use('/query', query)
+app.use('/courseGrade',courseGrade)
 app.use('/qtest',qtest)
+app.use('/scheQuery',scheQuery)
+
 app.listen(8088, () => {
     console.log('服务启动','localhost:8088')
 })
