@@ -19,7 +19,7 @@ var query = function async(sql, callback) {
                 console.log("连接成功");
             }
 
-           await connection.execute(sql, [], function (err, result) {
+            await connection.execute(sql, [], function (err, result) {
                 if (err) {
                     console.error(err.message);
                     doRelease(connection);

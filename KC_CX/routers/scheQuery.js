@@ -1,14 +1,19 @@
 const express = require('express');
 const router = express.Router();
 var db = require('../connect');
+const querySQL=require('../db/querySQL')
+router.get('/schedule', async (req, res) => {
+    var json = req.query
+    sql=queryMdl.queryMdl(querySQL.yktJiben,json);
 
-router.get('/test', (req, res) => {
-    json= {ID: '83196',XQ: '2009-2010-1'}
-    for (var key in Json)
-    {
-        ACondition.push(key+'='+Json[key]);
+    try {
+        db.query(sql, function (result) {
+            console.log(result);
+            res.json(result)
+        })
+    } catch (error) {
+        console.log(error)
     }
-    const sCondition=ACondition.join(' and ');
     
 })
    
