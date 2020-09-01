@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
-const db=require('../connect')
-module.exports= db.sequelize.define('order',{
+const sequelize=require('../connect')
+const order =  sequelize.define('order',{
     id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -29,5 +29,6 @@ module.exports= db.sequelize.define('order',{
     timestamps: false               // 不要默认时间戳
 });
 
+module.exports = order;
 
 

@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
-const db=require('../connect')
-module.exports= db.sequelize.define('commodit',{
+const sequelize=require('../connect')
+const commodit = sequelize.define('commodit',{
     'id': {
         type: Sequelize.CHAR(11),
         primaryKey: true,
@@ -27,4 +27,5 @@ module.exports= db.sequelize.define('commodit',{
 });
 
 
+module.exports = commodit;
 

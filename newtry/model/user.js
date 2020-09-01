@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
-const db=require('../connect')
-module.exports= db.sequelize.define('user',{
+const sequelize=require('../connect')
+const user = sequelize.define('user',{
     id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -25,5 +25,5 @@ module.exports= db.sequelize.define('user',{
     timestamps: false               // 不要默认时间戳
 });
 
-
+module.exports = user;
 

@@ -3,8 +3,7 @@ const router = express.Router();
 
 var db = require('../connect');
 router.get('/test', (req, res) => {
-    var fs = req.query
-    console.log(fs)
+
     let usergrade = {
         id: parseInt(req.query.id),
         XQ: req.query.XQ,

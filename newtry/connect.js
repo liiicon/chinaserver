@@ -1,9 +1,4 @@
 const Sequelize = require('sequelize')
-const mysql = require('mysql')
-const express = require('express')
-const app = express()
-const router = express.Router();
-const db={}
 const sqlConfig = {
     host: "localhost",
     user: "root",
@@ -30,6 +25,4 @@ sequelize
     .catch(err => {
         console.log('Connection Error')
     })
-   db.sequelize=sequelize;
-   db.Sequelize=Sequelize;
-   module.exports=db;
+    module.exports = sequelize;

@@ -3,6 +3,7 @@ const router = express.Router();
 var db = require('../connect');
 const querySQL=require('../db/querySQL')
 
+//一卡通基本信息
 router.get('/jiben', async (req, res) => {
 
     var json = req.query
@@ -18,6 +19,7 @@ router.get('/jiben', async (req, res) => {
     }
     
 })
+//一卡通统计信息
 router.get('/tongji', async (req, res) => {
 
     var json = req.query
@@ -33,6 +35,7 @@ router.get('/tongji', async (req, res) => {
     }
     
 })
+//一卡通消费信息
 router.get('/xiaofei', async (req, res) => {
 
     var json = req.query
